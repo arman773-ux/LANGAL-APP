@@ -1,403 +1,234 @@
-# 🌾 লাঙ্গল কৃষি সহায়ক
+# Database Views Documentation
 
-<div align="center">
-  <img src="./public/img/Asset 3.png" alt="লাঙ্গল কৃষি সহায়ক লোগো" width="200" height="200">
-  
-  <h3>🇧🇩 বাংলাদেশের কৃষকদের জন্য স্মার্ট কৃষি সমাধান</h3>
-  
-  [![React](https://img.shields.io/badge/React-18.0-blue.svg)](https://reactjs.org/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC.svg)](https://tailwindcss.com/)
-  [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF.svg)](https://vitejs.dev/)
-</div>
+## Langol Krishi Sahayak System
 
----
+This directory contains comprehensive database views created for the Langol Krishi Sahayak (Agricultural Assistant) system. All views exclude the `active_user_sessions` table as requested.
 
-## 📱 অ্যাপ্লিকেশন সম্পর্কে
+## 📁 Files Overview
 
-**লাঙ্গল কৃষি সহায়ক** একটি আধুনিক ওয়েব অ্যাপ্লিকেশন যা বাংলাদেশের কৃষকদের জন্য ডিজাইন করা হয়েছে। এটি কৃষকদের তাদের কৃষিকাজে সাহায্য করার জন্য বিভিন্ন স্মার্ট সমাধান প্রদান করে।
+### Core View Files
 
-### 🎯 মূল উদ্দেশ্য
+- **`user_management_views.sql`** - User-related views and authentication
+- **`social_feed_views.sql`** - Social media functionality views
+- **`marketplace_views.sql`** - Marketplace and trading views
+- **`consultation_views.sql`** - Expert consultation system views
+- **`diagnosis_views.sql`** - Disease diagnosis and treatment views
+- **`agricultural_data_views.sql`** - Weather, crops, and market data views
+- **`system_views.sql`** - System administration and monitoring views
+- **`comprehensive_views.sql`** - Complex analytics and reporting views
+- **`master_views.sql`** - Master file with essential views for quick setup
 
-- কৃষকদের প্রযুক্তিগত সহায়তা প্রদান
-- ফসলের রোগ নির্ণয় ও চিকিৎসা
-- আবহাওয়া ভিত্তিক কৃষি পরিকল্পনা
-- বিশেষজ্ঞদের সাথে সরাসরি যোগাযোগ
-- কৃষি পণ্যের বাজার সুবিধা
+## 🔍 View Categories
 
----
+### 1. User Management Views (`user_management_views.sql`)
 
-## ✨ প্রধান বৈশিষ্ট্যসমূহ
+- **`v_user_complete_info`** - Complete user information with profiles
+- **`v_farmer_details`** - Farmer-specific information and farm details
+- **`v_expert_details`** - Expert qualifications and ratings
+- **`v_customer_details`** - Customer business information
+- **`v_data_operator_details`** - Data operator assignments and permissions
+- **`v_user_statistics_by_district`** - User distribution by geographic area
+- **`v_recent_user_registrations`** - Recently registered users
+- **`v_pending_profile_verifications`** - Users awaiting profile verification
 
-### 🌱 **রোগ নির্ণয় সিস্টেম**
+### 2. Social Feed Views (`social_feed_views.sql`)
 
-- ফসলের ছবি আপলোড করে রোগ শনাক্তকরণ
-- AI ভিত্তিক রোগ বিশ্লেষণ
-- চিকিৎসার পরামর্শ ও ওষুধের তালিকা
-- খরচ হিসাব ও প্রয়োগ নির্দেশনা
+- **`v_posts_with_author`** - Posts with author information and engagement
+- **`v_post_tags_with_usage`** - Hashtags and their usage statistics
+- **`v_comments_with_author`** - Comments and replies with author details
+- **`v_post_engagement_summary`** - Post performance metrics
+- **`v_popular_posts_weekly`** - Most popular posts from last week
+- **`v_user_social_activity`** - User social media activity summary
+- **`v_trending_tags_monthly`** - Trending hashtags analysis
+- **`v_post_comments_tree`** - Hierarchical comment structure
+- **`v_posts_by_location`** - Geographic post distribution
 
-### 🌾 **ফসল সুপারিশ**
+### 3. Marketplace Views (`marketplace_views.sql`)
 
-- এলাকা ভিত্তিক ফসলের পরামর্শ
-- মৌসুম অনুযায়ী সবচেয়ে লাভজনক ফসল
-- বিনিয়োগ ও মুনাফা হিসাব
-- চাষাবাদের সময়সূচী
+- **`v_marketplace_listings_complete`** - Complete listing information with seller details
+- **`v_active_marketplace_listings`** - Currently active listings only
+- **`v_marketplace_categories_with_counts`** - Categories with listing statistics
+- **`v_popular_marketplace_listings`** - Most viewed and saved listings
+- **`v_user_saved_listings`** - User favorites and saved items
+- **`v_marketplace_activity_by_location`** - Geographic marketplace activity
+- **`v_seller_performance`** - Seller success rates and metrics
+- **`v_recent_marketplace_activity`** - Recent marketplace events
+- **`v_expired_listings_report`** - Expired and expiring listings
 
-### 🌤️ **আবহাওয়া পরিকল্পনা**
+### 4. Consultation Views (`consultation_views.sql`)
 
-- ৭ দিনের আবহাওয়ার পূর্ভাবাস
-- আবহাওয়া অনুযায়ী কৃষিকাজের পরামর্শ
-- বৃষ্টিপাত ও তাপমাত্রার তথ্য
-- সেচ ও রোপণের সময় নির্ধারণ
+- **`v_consultations_complete`** - Complete consultation details with participants
+- **`v_active_consultations`** - Currently active consultation sessions
+- **`v_consultation_responses_complete`** - Expert responses with context
+- **`v_expert_performance_metrics`** - Expert performance and statistics
+- **`v_pending_consultations_for_assignment`** - Unassigned consultation requests
+- **`v_consultation_statistics_by_crop`** - Consultation trends by crop type
+- **`v_monthly_consultation_trends`** - Monthly consultation analytics
+- **`v_expert_workload_distribution`** - Expert capacity and workload
 
-### 💬 **বিশেষজ্ঞ পরামর্শ**
+### 5. Diagnosis Views (`diagnosis_views.sql`)
 
-- কৃষি বিশেষজ্ঞদের সাথে সরাসরি যোগাযোগ
-- ভয়েস, টেক্সট ও ভিডিও কল সুবিধা
-- ২৪/৭ সাপোর্ট সিস্টেম
-- বিভিন্ন বিষয়ে বিশেষজ্ঞ পরামর্শ
+- **`v_diagnoses_complete`** - Complete diagnosis information with participants
+- **`v_disease_treatments_complete`** - Treatment recommendations with context
+- **`v_treatment_chemicals_complete`** - Chemical treatments with cost calculations
+- **`v_pending_diagnoses_for_verification`** - Diagnoses awaiting expert review
+- **`v_disease_statistics_by_crop`** - Disease patterns by crop type
+- **`v_expert_verification_performance`** - Expert verification metrics
+- **`v_disease_outbreak_alert`** - Disease outbreak monitoring and alerts
+- **`v_treatment_cost_analysis`** - Treatment cost analysis by disease/location
+- **`v_recent_diagnosis_activity`** - Recent diagnosis activities
 
-### 🛒 **কৃষি বাজার**
+### 6. Agricultural Data Views (`agricultural_data_views.sql`)
 
-- কৃষি যন্ত্রপাতি ভাড়া ও বিক্রয়
-- বীজ ও সারের দোকান
-- ফসল বিক্রয়ের প্ল্যাটফর্ম
-- দাম তুলনা ও বাজার তথ্য
+- **`v_crop_recommendations_complete`** - Crop recommendations with farmer context
+- **`v_crops_profitability_analysis`** - Crop profitability and ROI analysis
+- **`v_weather_agricultural_insights`** - Weather data with agricultural advice
+- **`v_market_prices_with_trends`** - Market prices with trend analysis
+- **`v_agricultural_news_enhanced`** - News with categorization and relevance
+- **`v_seasonal_crop_recommendations`** - Season-appropriate crop suggestions
+- **`v_agricultural_dashboard_summary`** - Key agricultural metrics summary
+- **`v_location_agricultural_summary`** - Location-based agricultural data
 
-### 📰 **কৃষি সংবাদ**
+### 7. System Views (`system_views.sql`)
 
-- সর্বশেষ কৃষি নীতি ও সংবাদ
-- বাজারের দামের আপডেট
-- সরকারি ভর্তুকি ও প্রকল্পের তথ্য
-- কৃষি প্রযুক্তির খবর
+- **`v_notifications_complete`** - Notifications with sender/recipient details
+- **`v_user_sessions_management`** - User session monitoring and management
+- **`v_system_settings_management`** - System configuration management
+- **`v_data_operator_performance`** - Data operator workload and performance
+- **`v_data_operator_activity_logs_detailed`** - Detailed operator activity logs
+- **`v_profile_verification_records_detailed`** - Profile verification process tracking
+- **`v_field_data_collection_summary`** - Field data collection activities
+- **`v_social_feed_reports_management`** - Content moderation and reporting
+- **`v_system_health_dashboard`** - Overall system health metrics
 
-### 📱 **সামাজিক নেটওয়ার্ক**
+### 8. Comprehensive Views (`comprehensive_views.sql`)
 
-- কৃষকদের মধ্যে অভিজ্ঞতা শেয়ারিং
-- সফল চাষাবাদের গল্প
-- প্রশ্ন-উত্তর সেকশন
-- কমিউনিটি সাপোর্ট
+- **`v_comprehensive_user_activity`** - Complete user activity across all modules
+- **`v_location_agricultural_intelligence`** - Geographic agricultural insights
+- **`v_platform_analytics_dashboard`** - Platform-wide analytics and KPIs
+- **`v_master_data_export`** - Data export view for backup and analysis
 
-### 🔊 **টেক্সট-টু-স্পিচ (TTS)** ⭐ নতুন!
+## 🚀 Installation and Usage
 
-- **উচ্চমানের AI TTS**: Meta's MMS মডেল দিয়ে natural বাংলা উচ্চারণ
-- **দুটি মোড**: Hugging Face AI + ব্রাউজার TTS (অফলাইন)
-- **নিরক্ষর কৃষকদের জন্য**: সব কন্টেন্ট শুনে বুঝতে পারবেন
-- **ওয়ান-ক্লিক সাপোর্ট**: যেকোনো পোস্ট/নিউজ শুনুন
-- 📖 বিস্তারিত গাইড: [BANGLA_TTS_GUIDE.md](./BANGLA_TTS_GUIDE.md)
+### Quick Setup
 
----
-
-## 🚀 ইনস্টলেশন ও সেটআপ
-
-### প্রয়োজনীয় সফটওয়্যার
-
-- Node.js (18.0+)
-- npm বা yarn
-- Git
-
-### 🚀 টিম মেম্বারদের জন্য সেটআপ গাইড
-
-#### ১. Repository Fork/Clone করুন
-
-```bash
-# ফর্ক করার পর আপনার রিপোজিটরি ক্লোন করুন
-git clone https://github.com/YOUR_USERNAME/langal.git
-
-# অথবা original repository clone করুন
-git clone https://github.com/10Maruf/langal.git
-
-# প্রজেক্ট ডিরেক্টরিতে যান
-cd langal
+```sql
+-- Execute the master views file for essential views
+mysql -u username -p langol_krishi_sahayak < database-views/master_views.sql
 ```
 
-#### ২. Frontend Setup
+### Complete Setup
 
-```bash
-# Frontend dependencies install করুন
-npm install
-
-# .env ফাইল তৈরি করুন
-cp .env.example .env
-
-# .env ফাইলে API keys যোগ করুন (নিচে দেখুন)
+```sql
+-- Execute all view files in order
+mysql -u username -p langol_krishi_sahayak < database-views/user_management_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/social_feed_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/marketplace_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/consultation_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/diagnosis_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/agricultural_data_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/system_views.sql
+mysql -u username -p langol_krishi_sahayak < database-views/comprehensive_views.sql
 ```
 
-#### ৩. Backend Setup (Laravel)
+### Prerequisites
 
-```bash
-# Backend directory তে যান
-cd langal-backend
+- MySQL 8.0+ (for JSON functions and window functions)
+- The main `langol_krishi_sahayak_database.sql` schema must be created first
+- Proper user permissions for creating views
 
-# Composer dependencies install করুন
-composer install
+## 📊 Key Features
 
-# .env ফাইল তৈরি করুন
-cp .env.example .env
+### Performance Optimizations
 
-# Application key generate করুন
-php artisan key:generate
+- **Indexed Columns**: Views utilize indexed columns for optimal performance
+- **Aggregated Data**: Pre-calculated metrics to reduce query load
+- **Filtered Results**: Built-in filtering for active/valid records
+- **JSON Functions**: Utilizes MySQL JSON functions for complex data
 
-# Database তৈরি করুন (XAMPP/MySQL)
-# MySQL-এ "langol_krishi_sahayak" নামে database তৈরি করুন
+### Analytics Capabilities
 
-# .env ফাইলে database config করুন:
-# DB_DATABASE=langol_krishi_sahayak
-# DB_USERNAME=root
-# DB_PASSWORD=
+- **Geographic Analysis**: Location-based insights and trends
+- **Temporal Analysis**: Time-based trends and seasonal patterns
+- **Performance Metrics**: KPIs and success rates across modules
+- **Engagement Scoring**: User and content engagement calculations
 
-# Database migrations run করুন
-php artisan migrate
+### Business Intelligence
 
-# Database seeding (optional)
-php artisan db:seed
+- **Dashboard Ready**: Views optimized for dashboard consumption
+- **Report Generation**: Structured data for automated reporting
+- **Trend Analysis**: Historical data and trend calculations
+- **Alert Systems**: Built-in alert conditions and thresholds
 
-# Laravel backend start করুন
-php artisan serve
-# Backend চলবে: http://127.0.0.1:8000
+## 💡 Usage Examples
+
+### Get Active Users by District
+
+```sql
+SELECT district, active_users, verified_users
+FROM v_user_statistics_by_district
+WHERE user_type = 'farmer'
+ORDER BY active_users DESC;
 ```
 
-#### ৪. Environment Variables Setup
+### Monitor System Health
 
-**Frontend (.env):**
-```env
-VITE_API_BASE=http://127.0.0.1:8000/api
-VITE_API_URL=http://127.0.0.1:8000
-VITE_HUGGINGFACE_API_KEY=your_huggingface_key
-VITE_GEMINI_API_KEY=your_gemini_key
+```sql
+SELECT * FROM v_system_health_dashboard;
 ```
 
-**Backend (langal-backend/.env):**
-```env
-APP_URL=http://localhost:8000
+### Analyze Marketplace Performance
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=langol_krishi_sahayak
-DB_USERNAME=root
-DB_PASSWORD=
-
-OPENAI_API_KEY=your_openai_key
-UNSPLASH_ACCESS_KEY=your_unsplash_key
-HUGGINGFACE_API_KEY=your_huggingface_key
+```sql
+SELECT seller_name, total_listings, success_rate_percent
+FROM v_seller_performance
+WHERE total_listings >= 5
+ORDER BY success_rate_percent DESC;
 ```
 
-#### ৫. চালু করুন
+### Track Disease Outbreaks
 
-**Terminal 1 - Backend:**
-```bash
-cd langal-backend
-php artisan serve
+```sql
+SELECT disease_name, location, cases_last_7_days, alert_level
+FROM v_disease_outbreak_alert
+WHERE alert_level IN ('High Alert', 'Medium Alert');
 ```
 
-**Terminal 2 - Frontend:**
-```bash
-npm run dev
-```
+## 🔧 Maintenance
 
-✅ Frontend: `http://localhost:5173`  
-✅ Backend: `http://127.0.0.1:8000`
+### Regular Maintenance Tasks
 
-#### 🔑 API Keys কোথায় পাবেন?
+1. **Performance Monitoring**: Monitor view query performance
+2. **Index Optimization**: Ensure underlying tables have proper indexes
+3. **Data Validation**: Verify view results match expected business logic
+4. **Documentation Updates**: Keep view documentation current
 
-- **OpenAI**: https://platform.openai.com/api-keys
-- **Hugging Face**: https://huggingface.co/settings/tokens
-- **Gemini**: https://makersuite.google.com/app/apikey
-- **Unsplash**: https://unsplash.com/oauth/applications
+### Troubleshooting
 
-**⚠️ Important:** `.env` ফাইল কখনো commit করবেন না! এটা `.gitignore` এ আছে।
+- **Missing Data**: Check if base tables have required data
+- **Slow Queries**: Analyze execution plans and optimize indexes
+- **Permission Issues**: Ensure proper database permissions
+- **Version Compatibility**: Verify MySQL version compatibility
 
-### বিল্ড করার জন্য
+## 📝 Notes
 
-```bash
-# প্রোডাকশন বিল্ড তৈরি করুন
-npm run build
+- All views exclude `active_user_sessions` table as specifically requested
+- Views are designed to work with the existing database schema
+- JSON columns are utilized where appropriate for complex data structures
+- Geographic data is based on Bangladesh's administrative divisions
+- Financial calculations use BDT (Bangladeshi Taka) currency
+- Date calculations consider Bangladesh's agricultural seasons
 
-# বিল্ড প্রিভিউ দেখুন
-npm run preview
-```
+## 🤝 Contributing
 
----
+When modifying or adding new views:
 
-## 🛠️ ব্যবহৃত প্রযুক্তি
+1. Follow the existing naming convention (`v_module_description`)
+2. Include proper documentation in comments
+3. Test performance with realistic data volumes
+4. Update this README with new view descriptions
+5. Consider data privacy and security implications
 
-### Frontend
+## 📄 License
 
-- **React 18** - ইউজার ইন্টারফেস লাইব্রেরি
-- **TypeScript** - টাইপ সেফটি
-- **Tailwind CSS** - স্টাইলিং ফ্রেমওয়ার্ক
-- **Shadcn/ui** - UI কম্পোনেন্ট লাইব্রেরি
-- **Lucide React** - আইকন লাইব্রেরি
-- **React Router** - রাউটিং সিস্টেম
-
-### Tools & Build
-
-- **Vite** - বিল্ড টুল ও ডেভ সার্ভার
-- **ESLint** - কোড লিন্টিং
-- **PostCSS** - CSS প্রসেসিং
-
-### APIs & Services
-
-- **Web Speech API** - টেক্সট-টু-স্পিচ
-- **Weather API** - আবহাওয়ার তথ্য
-- **AI/ML Models** - রোগ নির্ণয়
-
----
-
-## 📂 প্রজেক্ট স্ট্রাকচার
-
-```
-langol-krishi-sahayak/
-├── public/                 # স্ট্যাটিক ফাইল
-│   ├── img/               # ছবি ও লোগো
-│   └── favicon.ico        # ফেভিকন
-├── src/
-│   ├── components/        # রিইউজেবল কম্পোনেন্ট
-│   │   ├── ui/           # বেসিক UI কম্পোনেন্ট
-│   │   ├── layout/       # লেআউট কম্পোনেন্ট
-│   │   ├── dashboard/    # ড্যাশবোর্ড কম্পোনেন্ট
-│   │   └── marketplace/  # বাজার কম্পোনেন্ট
-│   ├── pages/            # পেজ কম্পোনেন্ট
-│   ├── contexts/         # React Context
-│   ├── hooks/            # কাস্টম হুক
-│   ├── lib/              # ইউটিলিটি ফাংশন
-│   └── App.tsx           # মূল অ্যাপ কম্পোনেন্ট
-├── package.json          # ডিপেন্ডেন্সি তালিকা
-└── README.md            # এই ফাইল
-```
-
----
-
-## 🎨 ইউজার ইন্টারফেস
-
-### ড্যাশবোর্ড ডিজাইন
-
-- **বড় আইকন**: নিরক্ষর কৃষকদের জন্য সহজ বোধগম্য
-- **বাংলা ভাষা**: সম্পূর্ণ বাংলায় ইন্টারফেস
-- **রেসপনসিভ**: মোবাইল ও ডেস্কটপ উভয়ে কাজ করে
-- **অ্যাক্সেসিবল**: TTS সহ প্রতিবন্ধী বান্ধব
-
-### কালার স্কিম
-
-- **প্রাইমারি**: সবুজ (কৃষির প্রতীক)
-- **সেকেন্ডারি**: নীল (প্রযুক্তির প্রতীক)
-- **অ্যাক্সেন্ট**: হলুদ (ফসলের প্রতীক)
-
----
-
-## 👥 ব্যবহারকারীর ধরন
-
-### 🌾 কৃষক (Farmer)
-
-- মূল ব্যবহারকারী গ্রুপ
-- সরলীকৃত ইন্টারফেস
-- TTS সাপোর্ট
-- বড় বাটন ও আইকন
-
-### 👨‍🌾 কৃষি বিশেষজ্ঞ (Expert)
-
-- পরামর্শ প্রদানকারী
-- বিশ্লেষণ টুলস
-- রিপোর্ট জেনারেশন
-- কৃষক যোগাযোগ ব্যবস্থা
-
-### 🏪 ক্রেতা/বিক্রেতা (Customer)
-
-- কৃষি পণ্য ক্রয়-বিক্রয়
-- বাজার অ্যাক্সেস
-- দাম তুলনা
-- অর্ডার ট্র্যাকিং
-
-### 📊 ডেটা অপারেটর (Data Operator)
-
-- তথ্য যাচাইকরণ
-- কৃষক রেজিস্ট্রেশন
-- ডেটা এন্ট্রি ও আপডেট
-- রিপোর্ট তৈরি
-
----
-
-## 🌟 ভবিষ্যত পরিকল্পনা
-
-### Phase 1 (বর্তমান)
-
-- ✅ বেসিক ড্যাশবোর্ড
-- ✅ রোগ নির্ণয় সিস্টেম
-- ✅ বিশেষজ্ঞ পরামর্শ
-- ✅ TTS ইন্টিগ্রেশন
-
-### Phase 2 (আগামী ৩ মাস)
-
-- 🔄 AI উন্নতিকরণ
-- 🔄 মোবাইল অ্যাপ
-- 🔄 অফলাইন সাপোর্ট
-- 🔄 SMS ইন্টিগ্রেশন
-
-### Phase 3 (আগামী ৬ মাস)
-
-- 📱 IoT সেন্সর ইন্টিগ্রেশন
-- 🚁 ড্রোন মনিটরিং
-- 💰 মাইক্রো ক্রেডিট সিস্টেম
-- 🏦 ব্যাংকিং ইন্টিগ্রেশন
-
----
-
-## 🤝 অবদান রাখুন
-
-আমরা কমিউনিটির অবদানকে স্বাগত জানাই! আপনি যেভাবে সাহায্য করতে পারেন:
-
-### কোড অবদান
-
-1. এই রিপোজিটরি ফর্ক করুন
-2. নতুন ব্রাঞ্চ তৈরি করুন (`git checkout -b feature/amazing-feature`)
-3. আপনার পরিবর্তন কমিট করুন (`git commit -m 'Add amazing feature'`)
-4. ব্রাঞ্চে পুশ করুন (`git push origin feature/amazing-feature`)
-5. পুল রিকোয়েস্ট তৈরি করুন
-
-### অন্যান্য উপায়
-
-- 🐛 বাগ রিপোর্ট করুন
-- 💡 নতুন ফিচার সাজেস্ট করুন
-- 📖 ডকুমেন্টেশন উন্নত করুন
-- 🌐 অনুবাদে সাহায্য করুন
-
----
-
-## 📞 যোগাযোগ
-
-### ডেভেলপমেন্ট টিম
-
-- **প্রজেক্ট লিড**: [আপনার নাম]
-- **GitHub**: [@10Maruf](https://github.com/10Maruf)
-- **ইমেইল**: [your-email@example.com]
-
-### সাপোর্ট
-
-- **ইস্যু ট্র্যাকার**: [GitHub Issues](https://github.com/10Maruf/langol-krishi-sahayak/issues)
-- **ডিসকাশন**: [GitHub Discussions](https://github.com/10Maruf/langol-krishi-sahayak/discussions)
-
----
-
-## 📄 লাইসেন্স
-
-এই প্রজেক্টটি MIT লাইসেন্সের অধীনে লাইসেন্সপ্রাপ্ত। বিস্তারিত জানতে [LICENSE](LICENSE) ফাইল দেখুন।
-
----
-
-## 🙏 কৃতজ্ঞতা
-
-- বাংলাদেশের কৃষকদের অনুপ্রেরণার জন্য ধন্যবাদ
-- React ও TypeScript কমিউনিটির জন্য কৃতজ্ঞতা
-- Shadcn/ui এর চমৎকার UI কম্পোনেন্টের জন্য
-- সকল কন্ট্রিবিউটরদের প্রতি আন্তরিক ধন্যবাদ
-
----
-
-<div align="center">
-  <strong>🌾 বাংলাদেশের কৃষিতে প্রযুক্তির ব্যবহার করে কৃষকদের জীবনযাত্রার মান উন্নয়নে আমাদের ছোট্ট অবদান 🌾</strong>
-  
-  <br><br>
-  
-  Made with ❤️ for Bangladesh Farmers
-</div>
+These database views are part of the Langol Krishi Sahayak system and follow the same licensing terms as the main project.
